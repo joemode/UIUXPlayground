@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UI UX Playground</string>
+
+    <string name="navigation_item_grid">Grid Recycler</string>
+    <string name="navigation_item_map">Styled Map</string>
+
+    <string name="navigation_drawer_open">drawer open</string>
+    <string name="navigation_drawer_closed">drawer closed</string>
+</resources>
