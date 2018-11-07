@@ -1,8 +1,8 @@
 package com.schoenherr.uiuxplayground.styledmap
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +13,7 @@ import com.schoenherr.uiuxplayground.R
 import com.schoenherr.uiuxplayground.databinding.FragmentStyledMapBinding
 import kotlinx.android.synthetic.main.fragment_styled_map.view.*
 
-class StyledMapFragment : Fragment() {
+class StyledMapFragment : androidx.fragment.app.Fragment() {
 
     private lateinit var viewModel: StyledMapViewModel
     private lateinit var binding: FragmentStyledMapBinding
@@ -45,7 +45,7 @@ class StyledMapFragment : Fragment() {
 
         binding.mapView.getMapAsync { map ->
             googleMap = map
-            googleMap.isMyLocationEnabled = true
+//            googleMap.isMyLocationEnabled = true
 
 
         }

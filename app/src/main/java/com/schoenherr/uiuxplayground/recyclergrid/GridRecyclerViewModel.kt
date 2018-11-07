@@ -1,6 +1,6 @@
 package com.schoenherr.uiuxplayground.recyclergrid
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 
 class GridRecyclerViewModel : ViewModel() {
 }

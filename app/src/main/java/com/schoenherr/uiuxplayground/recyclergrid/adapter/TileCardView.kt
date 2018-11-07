@@ -1,10 +1,10 @@
 package com.schoenherr.uiuxplayground.recyclergrid.adapter
 
 import android.content.Context
-import android.support.v7.widget.CardView
+import androidx.cardview.widget.CardView
 import android.util.AttributeSet
 
-class TileCardView : CardView {
+class TileCardView : androidx.cardview.widget.CardView {
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet): super(context, attrs)

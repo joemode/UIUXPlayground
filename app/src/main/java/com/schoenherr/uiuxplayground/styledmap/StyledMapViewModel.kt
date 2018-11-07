@@ -1,6 +1,6 @@
 package com.schoenherr.uiuxplayground.styledmap
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 
 class StyledMapViewModel : ViewModel() {
 }

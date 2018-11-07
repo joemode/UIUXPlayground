@@ -1,11 +1,11 @@
 package com.schoenherr.uiuxplayground.recyclergrid.adapter
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.schoenherr.uiuxplayground.databinding.GridRecyclerItemBinding
 
-class GridRecyclerAdapter(list: List<String>): RecyclerView.Adapter<GridRecyclerAdapter.ViewHolder>() {
+class GridRecyclerAdapter(list: List<String>): androidx.recyclerview.widget.RecyclerView.Adapter<GridRecyclerAdapter.ViewHolder>() {
 
     var itemList: MutableList<String> = list.toMutableList()
     fun addItems(list: List<String>) {
@@ -29,7 +29,7 @@ class GridRecyclerAdapter(list: List<String>): RecyclerView.Adapter<GridRecycler
 
 
     inner class ViewHolder(binding: GridRecyclerItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+        androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {
 
         val gridRecyclerItemBinding: GridRecyclerItemBinding = binding
         fun onBind(position: Int) {

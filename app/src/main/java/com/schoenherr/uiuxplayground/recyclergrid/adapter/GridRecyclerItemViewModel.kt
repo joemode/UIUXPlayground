@@ -1,6 +1,6 @@
 package com.schoenherr.uiuxplayground.recyclergrid.adapter
 
-import android.databinding.ObservableField
+import androidx.databinding.ObservableField
 
 class GridRecyclerItemViewModel(string: String) {
 

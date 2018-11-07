@@ -1,9 +1,9 @@
 package com.schoenherr.uiuxplayground.recyclergrid
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.GridLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,9 +30,9 @@ class GridRecyclerFragment : Fragment() {
 
         binding.viewModel = viewModel
         // TODO: Setup recycler
-        val layoutManager: GridLayoutManager = GridLayoutManager(activity, 2)
+        val layoutManager = GridLayoutManager(activity, 2)
         val list: List<String> = listOf("One", "Two", "Three", "Four")
-        val gridAdapter: GridRecyclerAdapter = GridRecyclerAdapter(list)
+        val gridAdapter = GridRecyclerAdapter(list)
         binding.recycler.adapter = gridAdapter
         binding.recycler.layoutManager = layoutManager
         return view

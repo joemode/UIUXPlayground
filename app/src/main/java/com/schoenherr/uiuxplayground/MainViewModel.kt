@@ -1,7 +1,7 @@
 package com.schoenherr.uiuxplayground
 
-import android.arch.lifecycle.ViewModel
-import android.databinding.ObservableBoolean
+import androidx.lifecycle.ViewModel
+import androidx.databinding.ObservableBoolean
 import io.reactivex.disposables.CompositeDisposable
 
 class MainViewModel(view: MainView) : ViewModel() {
