@@ -1,4 +1,4 @@
-package com.schoenherr.uiuxplayground.recyclergrid.adapter
+package com.schoenherr.uiuxplayground.ui.recyclergrid.adapter
 
 import android.content.Context
 import androidx.cardview.widget.CardView

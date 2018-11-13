@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,14 +10,28 @@
 
         <variable
             name="viewModel"
-            type="com.schoenherr.uiuxplayground.recyclergrid.GridRecyclerViewModel"/>
+            type="com.schoenherr.uiuxplayground.ui.recyclergrid.GridRecyclerViewModel"/>
     </data>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        tools:context=".GridRecyclerFragment">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:onClick="@{() -> viewModel.addItemClick()}"
+            app:srcCompat="@drawable/ic_add_white_24dp"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

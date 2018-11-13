@@ -1,4 +1,4 @@
-package com.schoenherr.uiuxplayground
+package com.schoenherr.uiuxplayground.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.databinding.ObservableBoolean

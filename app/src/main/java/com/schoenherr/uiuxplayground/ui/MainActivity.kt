@@ -1,4 +1,4 @@
-package com.schoenherr.uiuxplayground
+package com.schoenherr.uiuxplayground.ui
 
 import androidx.databinding.DataBindingUtil
 import androidx.appcompat.app.AppCompatActivity
@@ -7,9 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.MenuItem
 import com.schoenherr.uiuxplayground.databinding.ActivityMainBinding
 import androidx.core.view.GravityCompat
-import com.schoenherr.uiuxplayground.recyclergrid.GridRecyclerFragment
+import com.schoenherr.uiuxplayground.ui.recyclergrid.GridRecyclerFragment
 import androidx.appcompat.app.ActionBarDrawerToggle
-import com.schoenherr.uiuxplayground.styledmap.StyledMapFragment
+import com.schoenherr.uiuxplayground.R
+import com.schoenherr.uiuxplayground.ui.styledmap.StyledMapFragment
 
 
 /**
@@ -33,7 +34,10 @@ class MainActivity : AppCompatActivity(), MainView {
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
 
         val drawerToggle = ActionBarDrawerToggle(this, binding.drawerLayout,
-            binding.toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_closed)
+            binding.toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_closed
+        )
         binding.drawerLayout.addDrawerListener(drawerToggle)
         setupDrawer()
     }

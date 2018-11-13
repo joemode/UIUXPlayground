@@ -6,4 +6,6 @@
 
     <string name="navigation_drawer_open">drawer open</string>
     <string name="navigation_drawer_closed">drawer closed</string>
+
+    <string name="error">ERROR</string>
 </resources>

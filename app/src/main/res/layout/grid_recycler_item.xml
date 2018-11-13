@@ -9,10 +9,10 @@
 
         <variable
             name="viewModel"
-            type="com.schoenherr.uiuxplayground.recyclergrid.adapter.GridRecyclerItemViewModel"/>
+            type="com.schoenherr.uiuxplayground.ui.recyclergrid.adapter.GridRecyclerItemViewModel"/>
     </data>
 
-    <com.schoenherr.uiuxplayground.recyclergrid.adapter.TileCardView
+    <com.schoenherr.uiuxplayground.ui.recyclergrid.adapter.TileCardView
         android:id="@+id/item_tile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,5 +40,5 @@
 
         </LinearLayout>
 
-    </com.schoenherr.uiuxplayground.recyclergrid.adapter.TileCardView>
+    </com.schoenherr.uiuxplayground.ui.recyclergrid.adapter.TileCardView>
 </layout>

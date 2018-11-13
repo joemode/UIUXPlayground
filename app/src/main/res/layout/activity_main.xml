@@ -10,7 +10,7 @@
 
         <variable
             name="viewModel"
-            type="com.schoenherr.uiuxplayground.MainViewModel"/>
+            type="com.schoenherr.uiuxplayground.ui.MainViewModel"/>
     </data>
 
     <androidx.drawerlayout.widget.DrawerLayout

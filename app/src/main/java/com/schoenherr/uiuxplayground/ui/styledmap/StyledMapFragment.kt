@@ -1,30 +1,34 @@
-package com.schoenherr.uiuxplayground.styledmap
+package com.schoenherr.uiuxplayground.ui.styledmap
 
 import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.MapsInitializer
 import com.schoenherr.uiuxplayground.R
+import com.schoenherr.uiuxplayground.data.DataManagerImpl
 import com.schoenherr.uiuxplayground.databinding.FragmentStyledMapBinding
-import kotlinx.android.synthetic.main.fragment_styled_map.view.*
+import javax.inject.Inject
 
-class StyledMapFragment : androidx.fragment.app.Fragment() {
+//import org.koin.androidx.viewmodel.ext.android.viewModel
 
-    private lateinit var viewModel: StyledMapViewModel
+class StyledMapFragment : Fragment() {
+
+    val vm: StyledMapViewModel = StyledMapViewModel()
+
     private lateinit var binding: FragmentStyledMapBinding
     private lateinit var googleMap: GoogleMap
 
 //    lateinit var mapView: MapView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = StyledMapViewModel()
-    }
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+////        viewModel = StyledMapViewModel()
+//    }
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
@@ -32,9 +36,17 @@ class StyledMapFragment : androidx.fragment.app.Fragment() {
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_styled_map, container, false)
         val view: View = binding.root
-        initializeMapView(savedInstanceState)
-        // more stuff
+//        initializeMapView(savedInstanceState)
+
+        binding.viewModel = vm
+        binding.setLifecycleOwner(viewLifecycleOwner)
         return view
+    }
+
+    private fun initMap() {
+        vm.initializeMap { thing ->
+            Log.d("StyledMapFragment", thing)
+        }
     }
 
     private fun initializeMapView(savedInstanceState: Bundle?) {
