@@ -3,10 +3,13 @@ package com.schoenherr.uiuxplayground.data
 import android.app.Application
 import android.os.AsyncTask
 import androidx.lifecycle.LiveData
+import javax.inject.Inject
 
-class WordRepository(application: Application) {
+class WordRepository @Inject constructor(db: WordRoomDatabase){
 
-    private val db: WordRoomDatabase = WordRoomDatabase.getInstance(application)
+//    lateinit var application: Application
+//    @Inject lateinit var db: WordRoomDatabase
+//    private val db: WordRoomDatabase = WordRoomDatabase.getInstance(application)
     private val wordDao = db.wordDao()
     val allWords = wordDao.getAllWords()
 

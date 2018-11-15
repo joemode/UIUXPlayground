@@ -12,11 +12,12 @@ import com.google.android.gms.maps.MapsInitializer
 import com.schoenherr.uiuxplayground.R
 import com.schoenherr.uiuxplayground.data.DataManagerImpl
 import com.schoenherr.uiuxplayground.databinding.FragmentStyledMapBinding
+import com.schoenherr.uiuxplayground.ui.base.BaseFragment
 import javax.inject.Inject
 
 //import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class StyledMapFragment : Fragment() {
+class StyledMapFragment : BaseFragment() {
 
     val vm: StyledMapViewModel = StyledMapViewModel()
 

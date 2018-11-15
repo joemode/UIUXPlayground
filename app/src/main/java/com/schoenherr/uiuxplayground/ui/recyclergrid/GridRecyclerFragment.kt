@@ -16,17 +16,20 @@ import androidx.lifecycle.ViewModelProviders
 import com.schoenherr.uiuxplayground.R
 import com.schoenherr.uiuxplayground.data.Word
 import com.schoenherr.uiuxplayground.databinding.FragmentGridRecyclerBinding
+import com.schoenherr.uiuxplayground.ui.base.BaseFragment
 import com.schoenherr.uiuxplayground.ui.recyclergrid.adapter.GridRecyclerAdapter
+import javax.inject.Inject
 
-class GridRecyclerFragment : Fragment(), GridRecyclerAdapter.AdapterActionCallback {
+class GridRecyclerFragment : BaseFragment(), GridRecyclerAdapter.AdapterActionCallback {
 
-    private lateinit var viewModel: GridRecyclerViewModel
+    @Inject lateinit var viewModel: GridRecyclerViewModel
     private lateinit var binding: FragmentGridRecyclerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        getViewComponent().inject(this)
 //        viewModel = ViewModelProviders.of(this).get(GridRecyclerViewModel::class.java)
-        viewModel = GridRecyclerViewModel(this.activity!!.application)
+//        viewModel = GridRecyclerViewModel(this.activity!!.application)
     }
 
     override
@@ -72,7 +75,7 @@ class GridRecyclerFragment : Fragment(), GridRecyclerAdapter.AdapterActionCallba
 
         builder.setTitle("New Word")
             .setView(view)
-            .setPositiveButton(android.R.string.ok) {dialog, p1 ->
+            .setPositiveButton(android.R.string.ok) {dialog, _ ->
                 val newWord = editText.text
                 if (newWord.isBlank()) {
                     editText.error = getString(R.string.error)
@@ -81,7 +84,7 @@ class GridRecyclerFragment : Fragment(), GridRecyclerAdapter.AdapterActionCallba
                     dialog.dismiss()
                 }
             }
-            .setNegativeButton(android.R.string.cancel) {dialog, p1 ->
+            .setNegativeButton(android.R.string.cancel) {dialog, _ ->
                 dialog.cancel()
             }
             .show()

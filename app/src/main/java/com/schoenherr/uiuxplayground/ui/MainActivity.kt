@@ -10,13 +10,14 @@ import androidx.core.view.GravityCompat
 import com.schoenherr.uiuxplayground.ui.recyclergrid.GridRecyclerFragment
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.schoenherr.uiuxplayground.R
+import com.schoenherr.uiuxplayground.ui.base.BaseActivity
 import com.schoenherr.uiuxplayground.ui.styledmap.StyledMapFragment
 
 
 /**
  * For the handling of UI/UX playground fragments
  */
-class MainActivity : AppCompatActivity(), MainView {
+class MainActivity : BaseActivity(), MainView {
 
     private lateinit var binding : ActivityMainBinding
     private lateinit var viewModel : MainViewModel
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity(), MainView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        getViewComponent().inject(this)
 
         viewModel = MainViewModel(this)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
