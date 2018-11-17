@@ -1,6 +1,5 @@
 package com.schoenherr.uiuxplayground
 
-import android.annotation.SuppressLint
 import android.util.Log
 import androidx.annotation.MainThread
 import androidx.lifecycle.LifecycleOwner
@@ -20,13 +19,13 @@ import java.util.concurrent.atomic.AtomicBoolean
  */
 class SingleLiveEvent<T>: MutableLiveData<T>() {
 
-    private val TAG: String = "SingleLiveEvent"
+    private val name: String = SingleLiveEvent::class.java.simpleName
     private val pending: AtomicBoolean = AtomicBoolean(false)
 
     @MainThread
     override fun observe(owner: LifecycleOwner, observer: Observer<in T>) {
         if (hasActiveObservers()) {
-            Log.w(TAG, "Multiple observers registered but only one will be notified of changes")
+            Log.w(name, "Multiple observers registered but only one will be notified of changes")
         }
 
         super.observe(owner, Observer {
@@ -43,7 +42,12 @@ class SingleLiveEvent<T>: MutableLiveData<T>() {
     }
 
     @MainThread
-    fun call() {
-        setValue(null)
+    fun call(data: T) {
+        value = data
+    }
+
+    @MainThread
+    fun call () {
+        value = null
     }
 }

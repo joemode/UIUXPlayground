@@ -8,6 +8,8 @@ import com.schoenherr.uiuxplayground.di.view.ViewModule
 
 abstract class BaseFragment: Fragment() {
 
+    protected val name: String = this.javaClass.simpleName
+
     private var isInjectorUsed: Boolean = false
 
     private fun getApplicationComponent(): ApplicationComponent = (activity!!.application as PlaygroundApplication).applicationComponent

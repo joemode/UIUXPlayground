@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import android.view.LayoutInflater
@@ -24,6 +25,8 @@ class GridRecyclerFragment : BaseFragment(), GridRecyclerAdapter.AdapterActionCa
 
     @Inject lateinit var viewModel: GridRecyclerViewModel
     private lateinit var binding: FragmentGridRecyclerBinding
+
+//    private val name = GridRecyclerFragment::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +58,14 @@ class GridRecyclerFragment : BaseFragment(), GridRecyclerAdapter.AdapterActionCa
             openNewWordDialog()
         })
 
+
+        viewModel.neverNull.observe(this, Observer {new ->
+            Log.d(name, "neverNull has been updated to $new")
+        })
+
+        viewModel.updateLocation.observe(this, Observer { location ->
+            Log.d(name, "updateLocation: ${location.location} ${location.radius} ${location.hasMarker}")
+        })
         return view
     }
 
@@ -80,6 +91,7 @@ class GridRecyclerFragment : BaseFragment(), GridRecyclerAdapter.AdapterActionCa
                 if (newWord.isBlank()) {
                     editText.error = getString(R.string.error)
                 } else {
+                    viewModel.setNeverNull(newWord.toString())
                     viewModel.insert(Word(newWord.toString()))
                     dialog.dismiss()
                 }

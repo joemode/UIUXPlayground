@@ -32,6 +32,9 @@ class ViewModule(private val fragmentActivity: FragmentActivity) {
     fun provideDataManager(dataManagerImpl: DataManagerImpl) : DataManager = dataManagerImpl
 
     @Provides
-    fun provideGridRecyclerViewModel(application: Application, dataManager: DataManager): GridRecyclerViewModel =
-        GridRecyclerViewModel(application, dataManager)
+    fun provideWordDatabase(application: Application): WordRoomDatabase = WordRoomDatabase.getInstance(application)
+
+//    @Provides
+//    fun provideGridRecyclerViewModel(application: Application, dataManager: DataManager): GridRecyclerViewModel =
+//        GridRecyclerViewModel(application, dataManager)
 }
