@@ -11,6 +11,7 @@ import com.schoenherr.uiuxplayground.ui.recyclergrid.GridRecyclerFragment
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.schoenherr.uiuxplayground.R
 import com.schoenherr.uiuxplayground.ui.base.BaseActivity
+import com.schoenherr.uiuxplayground.ui.login.LoginFragment
 import com.schoenherr.uiuxplayground.ui.styledmap.StyledMapFragment
 
 
@@ -64,9 +65,10 @@ class MainActivity : BaseActivity(), MainView {
 
     private fun selectDrawerItem(menuItem: MenuItem) {
         val fragmentClass : Class<*> = when (menuItem.itemId) {
-            R.id.navigation_first -> { GridRecyclerFragment::class.java }
-            R.id.navigation_second -> { StyledMapFragment::class.java }
-            else -> { GridRecyclerFragment::class.java }
+            R.id.navigation_zero -> LoginFragment::class.java
+            R.id.navigation_first -> GridRecyclerFragment::class.java
+            R.id.navigation_second -> StyledMapFragment::class.java
+            else -> LoginFragment::class.java
         }
 
         val fragment = (fragmentClass.newInstance() as Fragment)

@@ -1,19 +1,20 @@
 package com.schoenherr.uiuxplayground.ui.recyclergrid
 
 import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.google.android.gms.maps.model.LatLng
-import com.schoenherr.uiuxplayground.SafeLiveData
-import com.schoenherr.uiuxplayground.SingleLiveEvent
+import com.schoenherr.uiuxplayground.utils.SafeLiveData
+import com.schoenherr.uiuxplayground.utils.SingleLiveEvent
 import com.schoenherr.uiuxplayground.data.DataManager
 import com.schoenherr.uiuxplayground.data.Word
 import com.schoenherr.uiuxplayground.data.WordRepository
 import javax.inject.Inject
 
-class GridRecyclerViewModel @Inject constructor(private val application: Application,
+class GridRecyclerViewModel @Inject constructor(application: Application,
                                                 private val dataManager: DataManager,
-                                                private val repository: WordRepository) {
+                                                private val repository: WordRepository)
+    : AndroidViewModel(application) {
 
     val allWords: LiveData<List<Word>> = repository.allWords
 
@@ -34,7 +35,8 @@ class GridRecyclerViewModel @Inject constructor(private val application: Applica
     private var location = LatLng(0.0, 0.0)
     private var radius = 5000
     private var hasMarker = false
-    private val _updateLocation = SafeLiveData(LocationUpdate(location, radius, hasMarker))
+    private val _updateLocation =
+        SafeLiveData(LocationUpdate(location, radius, hasMarker))
     val updateLocation: LiveData<LocationUpdate>
         get() = _updateLocation
 

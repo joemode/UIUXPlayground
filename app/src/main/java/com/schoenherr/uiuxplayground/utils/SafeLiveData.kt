@@ -1,4 +1,4 @@
-package com.schoenherr.uiuxplayground
+package com.schoenherr.uiuxplayground.utils
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData

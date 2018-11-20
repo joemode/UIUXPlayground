@@ -1,4 +1,4 @@
-package com.schoenherr.uiuxplayground
+package com.schoenherr.uiuxplayground.utils
 
 import android.util.Log
 import androidx.annotation.MainThread

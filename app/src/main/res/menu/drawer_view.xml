@@ -3,6 +3,10 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/navigation_zero"
+            android:icon="@drawable/ic_verified_user_black_24dp"
+            android:title="@string/navigation_item_login"/>
+        <item
             android:id="@+id/navigation_first"
             android:icon="@drawable/ic_grid_on_black_24dp"
             android:title="@string/navigation_item_grid"/>

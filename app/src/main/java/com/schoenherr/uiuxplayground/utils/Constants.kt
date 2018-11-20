@@ -1,4 +1,4 @@
-package com.schoenherr.uiuxplayground
+package com.schoenherr.uiuxplayground.utils
 
 class Constants {
     val PREFERENCESFILE = ""

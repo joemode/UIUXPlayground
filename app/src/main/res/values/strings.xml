@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">UI UX Playground</string>
 
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Already have an account? Continue to log in&#8320;</string>
+    <string name="enter">ENTER</string>
+
     <string name="navigation_item_grid">Grid Recycler</string>
     <string name="navigation_item_map">Styled Map</string>
+    <string name="navigation_item_login">Login View</string>
 
     <string name="navigation_drawer_open">drawer open</string>
     <string name="navigation_drawer_closed">drawer closed</string>
